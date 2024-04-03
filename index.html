@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+
+    <header>
+        <nav style="font-weight: bold;
+        font-family: calibri;font-size: 20px; ">
+            <a href="# ">Home</a>
+            <a href="# ">Order</a>
+            <a href="# ">Food</a>
+            <a href="# ">Restaurant</a>
+            <a href="# ">Testimonials</a>
+            <a href="# ">Contact Us</a>
+            <img src="menu-bar.png " alt=" " width="30px " onclick="toggl() ">
+        </nav>
+    </header>
+
+
+    <div class="card">
+        <div class="card-content">
+            <h1>LOREM IPSUM</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id est vitae dolor rhoncus tristique. Maecenas metus
+                quam, rhoncus euismod lorem in, sollicitudin viverra eros. Donec dictum luctus quam ut tristique. Curabitur nec faucibus purus. Quisque congue sem nec justo mollis, in tincidunt erat pretium. Sed pulvinar, massa ac porta viverra. .
+            </p>
+            <div class="mm" style=" border: 1px solid rgba(255, 113, 113, 1); text-decoration: none; width: 150px;  background-color: rgba(255, 113, 113, 1);height: 30px;text-align: center;padding-top: 13px; color: white;">
+                <a style="color: white;" href=" # ">Click Me</a>
+            </div>
+        </div>
+        <img src="pexels-robin-stickel-70497.jpg " alt="Image " />
+    </div>
+
+
+
+    <div class="page2 " style="display: flex; background: linear-gradient(to right, #fff4b0,#ffb3f0) ">
+        <div class="p1 ">
+            <div class="card-i ">
+                <div class="image-container ">
+                    <img src="pexels-rachel-claire-6752433.jpg " alt="Image 1 ">
+                    <img src="pexels-eva-bronzini-6141651.jpg " alt="Image 2 ">
+                </div>
+                <div class="cover-image ">
+                    <img src="pexels-mister-mister-3434523.jpg " alt="Image 3 ">
+                </div>
+            </div>
+        </div>
+        <div class="p2">
+            <div class="card-i2 " style="background-color: #ff7171; ">
+                <div class="first " style="margin-left: 20px; ">
+                    <p>LOREM IPSUM</p>
+                </div>
+                <div class="second " style="margin-left: 20px; font-size:22px; ">
+                    <h2 style="letter-spacing: 5px; ">LOREM IPSUM SET ADEMIR</h2>
+                </div>
+                <div class="third " style="margin-left: 20px; ">
+                    <p>click <span class="arrow-icon " style=" display: inline-block; "> <img src="icons8-arrow-30.png " alt=" " width="13px "></span></p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function toggl() {
+            var imgIcon = document.querySelector('nav img');
+            var navLinks = document.querySelectorAll('nav a');
+
+            function toggleMenu() {
+                navLinks.forEach(function(link) {
+                    link.classList.toggle('show');
+                    link.classList.toggle('hide');
+                });
+            }
+
+            imgIcon.addEventListener('click', function() {
+                toggleMenu();
+
+                // Update CSS dynamically
+                navLinks.forEach(function(link) {
+                    if (link.classList.contains('show')) {
+                        link.style.display = 'block';
+                    } else {
+                        link.style.display = 'none';
+                    }
+                });
+            });
+
+            // Initially hide the navigation links
+            function hideLinks() {
+                navLinks.forEach(function(link) {
+                    link.style.display = 'none';
+                });
+            }
+
+            // Call the hideLinks function initially at 700px
+            if (window.innerWidth <= 700) {
+                hideLinks();
+            }
+
+            // Show the navigation links on window resize after clicking the image icon
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 700) {
+                    navLinks.forEach(function(link) {
+                        link.style.display = 'block';
+                    });
+                }
+            });
+
+
+
+        }
+    </script>
+</body>
+
+</html>
